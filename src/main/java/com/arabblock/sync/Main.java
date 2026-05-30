@@ -1,5 +1,5 @@
 package com.arabblock.sync;
-
+import com.arabblock.sync.listeners.PlayerJoin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
