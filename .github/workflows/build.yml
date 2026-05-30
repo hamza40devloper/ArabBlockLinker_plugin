@@ -1,13 +1,10 @@
-name: Build Minecraft Plugin
+name: Java CI with Maven
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "main", "master" ]
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -27,8 +24,9 @@ jobs:
     - name: Build with Maven
       run: mvn clean package
 
-    - name: Upload Jar Artifact
+    # هذه هي الخطوة السحرية التي ستقوم بحفظ البلوجين وإظهاره لك كمرفق جاهز للتحميل
+    - name: Upload Plugin Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ArabBlockSync-Plugin
+        name: ArabBlockLinker-Plugin
         path: target/*.jar
